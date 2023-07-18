@@ -13,8 +13,12 @@ class CourseController extends AbstractController
 
     public function indexAction(): void
     {
+        $tete = "Sabino Machado";
         
-        $this->render('home/index');
+        $this->render('home/index', [
+            'teste' => "TESTE TESTE TESTE",
+            'tete' => $tete,
+            ]);
         
     }
 }
