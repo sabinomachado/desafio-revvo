@@ -1,17 +1,31 @@
-div para o slide <br/>
-div para cursos <br/>
+<section class="courses">
+    <div class="container">
+        <h2>meus cursos</h2>
+        <div class="courses__list flex">
 
-<?php 
-foreach ($data['courses'] as $course) {
-    echo "ID: " . $course->id . "<br>";
-    echo "Título: " . $course->title . "<br>";
-    echo "Resumo: " . $course->summary . "<br>";
-    echo "Link: " . $course->link . "<br>";
-    echo "URL da Imagem: " . $course->url_image . "<br>";
-    echo "Criado em: " . $course->created_at . "<br>";
-    echo "Atualizado em: " . $course->updated_at . "<br>";
-    echo "Deletado em: " . $course->deleted_at . "<br>";
-    echo "Deletado: " . $course->deletado . "<br><br>";
-}
+        <?php 
+        foreach ($data['courses'] as $course) { ?>
+            <div class="courses__card">
+            <div>
+                <img src="/assets/img/curso.png" />
+            </div>
+            <div class="courses__card--description">
+                <h4><?php echo($course->title) ?></h4>
+                <p><?php echo($course->summary) ?></p>
+            </div>
+            <a class="courses__button flexHorizontalVertical" href="#">ver curso</a>
+            </div>
 
-?>
+
+        <?php   }  ?>
+                
+
+        <div class="courses__add flexHorizontalVertical flexColumn">
+            <i class="far fa-calendar-plus"></i>
+            <p>adicionar <br/> curso</p>            
+        </div>        
+        </div>
+    </div>
+</section>
+
+ 
