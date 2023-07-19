@@ -48,16 +48,16 @@ class CourseRepository implements CourseRepositoryInterface
         return $result->fetchObject(Course::class);
     }
 
-    public function save(Course $category): void
+    public function save(Course $course): void
     {
-        $query = 'INSERT INTO '.self::TABLE."(name) VALUES('{$category->getName()}')";
-
+        $query = 'INSERT INTO '.self::TABLE."(title, summary, link, url_image) VALUES('{$course->getTitle()}', '{$course->getSummary()}', '{$course->getLink()}', '{$course->getUrlImage()}')";
+        
         $this->pdo->query($query);
     }
 
-    public function update(Course $category): void
+    public function update(Course $course): void
     {
-        $query = 'UPDATE '.self::TABLE." SET name='{$category->getName()}' WHERE id={$category->getId()}";
+        $query = 'UPDATE '.self::TABLE." SET title='{$course->getTitle()}' WHERE id={$category->getId()}";
 
         $this->pdo->query($query);
     }
@@ -68,4 +68,45 @@ class CourseRepository implements CourseRepositoryInterface
 
         $this->pdo->query($query);
     }
-}
+
+    public function validacao($request, $action){
+        $validacao = true;
+
+        if (!empty($request['title'])) {
+            $title = $request['title'];
+            $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $request['title'])));
+        } else {
+            $titleError = 'Por favor digite o título do curso!';
+            $validacao = false;
+        }
+        //summary
+        if (!empty($request['summary'])) {
+            $summary = $request['summary'];
+        } else {
+            $summaryError = 'Por favor digite o sumário do curso!';
+            $validacao = false;
+        }
+
+
+
+        if (!empty($request['url_image']) && $action != "edit") {
+            $urlImage = $request['url_image'];
+        } else {
+            $urlImageError = 'Por favor insira uma imagem!';
+            $validacao = false;
+        }
+
+        if ($validacao != false){
+            return true;
+        }else {
+            $this->render('home/index', [
+                'old' => $request,
+                'titleError' => $titleError,
+                'summaryError' => $summaryError,
+                'urlImageError' => $urlImageError,
+                ]);
+        }
+      
+    }
+    
+    }

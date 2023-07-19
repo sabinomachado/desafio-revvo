@@ -7,6 +7,7 @@
         <title>Desafio Revvo - Desenvolvedor FullStack</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
         <link rel="stylesheet" href="/assets/css/revvo.css">
+        <script src="/assets/js/revvo.js"> </script>
     </head>
     <body>
 
