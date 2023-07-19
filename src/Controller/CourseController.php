@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Entity\Course;
+use App\Notification\WebNotification;
+use App\Repository\CourseRepository;
+
 class CourseController extends AbstractController
 {
+    private CourseRepository $courseRepository;
   
-    public function __construct()
+    public function __construct(CourseRepository $repository)
     {
+        $this->repository = $repository;
     }
 
     public function indexAction(): void
@@ -16,8 +22,7 @@ class CourseController extends AbstractController
         $tete = "Sabino Machado";
         
         $this->render('home/index', [
-            'teste' => "TESTE TESTE TESTE",
-            'tete' => $tete,
+            'courses' => $this->repository->findAll(),
             ]);
         
     }

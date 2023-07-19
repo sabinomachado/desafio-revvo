@@ -2,7 +2,7 @@ CREATE DATABASE desafio_revvo;
 
 CREATE TABLE courses (
     id INT NOT NULL AUTO_INCREMENT,
-    title INT NOT NULL,
+    title VARCHAR(100) NOT NULL,
     summary VARCHAR(100) NOT NULL,
     link VARCHAR(50) NOT NULL,
     url_image VARCHAR(50) NOT NULL,

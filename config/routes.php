@@ -12,4 +12,7 @@ function mountRoute(string $controllerName, string $methodName): array
 
 return [
     '/' => mountRoute(CourseController::class, 'index'),
+    '/cursos/add' => mountRoute(CourseController::class, 'create'),
+    '/cursos/excluir' => mountRoute(CourseController::class, 'remove'),
+    '/cursos/editar' => mountRoute(CourseController::class, 'edit'),
 ];
