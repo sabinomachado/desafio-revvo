@@ -13,7 +13,9 @@
                     <h4><?php echo($course->title) ?></h4>
                     <p><?php echo($course->summary) ?></p>
                 </div>
-                <a class="courses__button flexHorizontalVertical" href="#">ver curso</a>
+                <?php 
+                echo "<a class='courses__button flexHorizontalVertical' href='/cursos/edit?id={$course->id}'>ver curso</a>";
+                ?>
                 </div>
 
 

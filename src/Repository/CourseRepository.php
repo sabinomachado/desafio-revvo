@@ -19,15 +19,12 @@ class CourseRepository implements CourseRepositoryInterface
     }
 
     public function findAll(): array
-    {        $query = 'SELECT * FROM '.self::TABLE.' where deleted_at is null';
-
-        
+    {        
+        $query = 'SELECT * FROM '.self::TABLE.' where deleted_at is null';
 
         $result = $this->pdo->query($query);
         $result->execute();
-        // var_dump($result->fetchAll());
         
-
         return $result->fetchAll(PDO::FETCH_CLASS);
     }
 
@@ -40,8 +37,8 @@ class CourseRepository implements CourseRepositoryInterface
 
     public function findOneById(string $id): Course
     {
-        $query = 'SELECT * FROM '.self::TABLE." WHERE id='{$id}';";
-
+        $query = 'SELECT * FROM '.self::TABLE." WHERE id='{$id}'";
+ 
         $result = $this->pdo->query($query);
         $result->execute();
 
@@ -57,10 +54,27 @@ class CourseRepository implements CourseRepositoryInterface
 
     public function update(Course $course): void
     {
-        $query = 'UPDATE '.self::TABLE." SET title='{$course->getTitle()}' WHERE id={$category->getId()}";
-
+        if($course->getUrlImage() != null){
+            $query = "UPDATE " . self::TABLE . " SET 
+            title = '{$course->getTitle()}', 
+            summary = '{$course->getSummary()}', 
+            link = '{$course->getLink()}'
+            url_image = '{$course->getUrlImage()}'
+            WHERE id = {$course->getId()}";
+        //$query = 'UPDATE '.self::TABLE." SET title='{$course->getTitle()}' WHERE id={$course->getId()}";
+        }
+        else {
+           
+            $query = "UPDATE " . self::TABLE . " SET 
+            title = '{$course->getTitle()}', 
+            summary = '{$course->getSummary()}', 
+            link = '{$course->getLink()}'
+            WHERE id = {$course->getId()}";
+        }
+        
         $this->pdo->query($query);
     }
+
 
     public function remove(string $id): void
     {
@@ -71,13 +85,15 @@ class CourseRepository implements CourseRepositoryInterface
 
     public function validacao($request, $action){
         $validacao = true;
-
+        
         if (!empty($request['title'])) {
             $title = $request['title'];
             $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $request['title'])));
         } else {
             $titleError = 'Por favor digite o título do curso!';
             $validacao = false;
+           
+            
         }
         //summary
         if (!empty($request['summary'])) {
@@ -85,26 +101,23 @@ class CourseRepository implements CourseRepositoryInterface
         } else {
             $summaryError = 'Por favor digite o sumário do curso!';
             $validacao = false;
+           
         }
 
+      
 
-
-        if (!empty($request['url_image']) && $action != "edit") {
+        if (!empty($request['url_image']) && $action == "add") {
             $urlImage = $request['url_image'];
-        } else {
+            
+        } 
+        if (empty($request['url_image']) && $action == "add") {
             $urlImageError = 'Por favor insira uma imagem!';
-            $validacao = false;
+            $validacao = false;    
         }
-
         if ($validacao != false){
             return true;
         }else {
-            $this->render('home/index', [
-                'old' => $request,
-                'titleError' => $titleError,
-                'summaryError' => $summaryError,
-                'urlImageError' => $urlImageError,
-                ]);
+           return false;
         }
       
     }

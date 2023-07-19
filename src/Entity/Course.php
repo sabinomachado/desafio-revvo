@@ -15,7 +15,6 @@ class Course
     private string $url_image;
     private string $created_at;
     private string $updated_at;
-    private string $deleted_at;
 
 
     public function getId(): int
@@ -86,15 +85,5 @@ class Course
     public function setUpdatedAt(string $updataedAt): void
     {
         $this->updated_at = $updataedAt;
-    }
-
-    public function getDeletedAt(): string
-    {
-        return $this->deleted_at;
-    }
-
-    public function setDeletedAt(string $deletedAt): void
-    {
-        $this->deleted_at = $deletedAt;
     }
 }

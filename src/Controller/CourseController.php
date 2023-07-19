@@ -10,7 +10,9 @@ use App\Repository\CourseRepository;
 
 class CourseController extends AbstractController
 {
-    private CourseRepository $courseRepository;
+    private CourseRepository $courseRepository; 
+    public $uploadDir = "assets/uploads/";
+
     
 
     public function __construct(CourseRepository $repository)
@@ -19,9 +21,7 @@ class CourseController extends AbstractController
     }
 
     public function indexAction(): void
-    {
-        $tete = "Sabino Machado";
-        
+    {        
         $this->render('home/index', [
             'courses' => $this->repository->findAll(),
             ]);
@@ -63,5 +63,46 @@ class CourseController extends AbstractController
 
         
         
+    }
+    public function editAction(): void
+    {
+        $uploadDir = "assets/uploads/";
+        $action = "edit";
+
+        $course = $this->repository->findOneById($_GET['id']);
+        if (true === empty($_POST)) {
+           
+            $this->render('cursos/edit', [
+                'courses' => $this->repository->findAll(),
+                'course' => $course,
+            ]);
+            return;
+        }else{
+            $request = $_POST;
+            $validacao = $this->repository->validacao($request, $action);
+            
+        }
+
+        if($validacao == true){
+           
+            $course->setTitle($_POST['title']);
+            $course->setSummary($_POST['summary']);
+            $course->setLink($_POST['link']);
+            $course->setUrlImage($_POST['url_image']);
+
+            $this->repository->update($course);
+    
+            $this->render('home/index', [
+                'courses' => $this->repository->findAll(),
+                ]);
+            }
+            else{
+                die("Erro! Procure o administrador do sistema!");
+            }
+            
+
+            // $this->render('home/index', [
+            //     'courses' => $this->repository->findAll(),
+            //     ]);
     }
 }
