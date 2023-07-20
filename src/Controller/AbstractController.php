@@ -6,8 +6,9 @@ namespace App\Controller;
 
 abstract class AbstractController
 {
-    public function render(string $viewName): void
+    public function render(string $viewName, array $data = []): void
     {
+        extract($data);
         include dirname(__DIR__, 2).'/views/_partials/header.php';
         include dirname(__DIR__, 2)."/views/{$viewName}.php";
         include dirname(__DIR__, 2).'/views/_partials/footer.php';
