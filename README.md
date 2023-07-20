@@ -23,7 +23,21 @@
 
 
 ## CREATING DATABASE
-COLOCAR OS CÓDIGO DA sql
+CREATE DATABASE desafio_revvo;
+
+CREATE TABLE courses (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    summary VARCHAR(100) NOT NULL,
+    link VARCHAR(50) NOT NULL,
+    url_image VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP NULL,
+    deletado BOOLEAN NULL DEFAULT 0,
+    PRIMARY KEY (id)
+);
+
 ``
 
 ## Install instructions'
