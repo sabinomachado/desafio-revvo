@@ -26,12 +26,6 @@
 
         <a href="/cursos/add">
 
-        <form action="/CourseController/createAction" method="createAction">
-
-               
-            </form>
-
-
             <div class="courses__add flexHorizontalVertical flexColumn" id="courses__add">
                 <i class="far fa-calendar-plus"></i>
                 <p>adicionar <br/> curso</p>           

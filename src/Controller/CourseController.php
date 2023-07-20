@@ -107,7 +107,6 @@ class CourseController extends AbstractController
     }
     public function removeAction(): void
     {
-        var_dump("chegou aqui!");
         $this->repository->remove($_GET['id']);
 
         $this->render('home/index', [
