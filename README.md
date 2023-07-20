@@ -7,9 +7,8 @@
 - Variáveis JS em camelCase.
 - Utilizei a a biblioteca [PHP-DI] através do composer, para implementar a injeção de dependência e aplicar namespaces, aplicando a [PSR-4](https://www.php-fig.org/psr/psr-4/)
 
-## CREATING DATABASE
- [Vídeo Explicativo](https://www.youtube.com/watch?v=CuuEAzDVge0)
-``
+## About Project & Developer
+ [Vídeo Explicativo](https://www.youtube.com/)
 
 
 ## Project SETUP
