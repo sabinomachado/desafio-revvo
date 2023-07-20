@@ -7,6 +7,10 @@
 - Variáveis JS em camelCase.
 - Utilizei a a biblioteca [PHP-DI] através do composer, para implementar a injeção de dependência e aplicar namespaces, aplicando a [PSR-4](https://www.php-fig.org/psr/psr-4/)
 
+## CREATING DATABASE
+ [Vídeo Explicativo](https://www.youtube.com/watch?v=CuuEAzDVge0)
+``
+
 
 ## Project SETUP
 - Install [Composer](https://getcomposer.org/download/)
@@ -40,10 +44,6 @@ COLOCAR OS CÓDIGO DA sql
 - Run locally `localhost:8000`
 
 # Other Instructions
- - Dont run tests on production database. Test create a fake data
  - use english on all, except frontend for show to users
  - Use Ident to spaces = 2 for coding
- - View CHANGELOG.md for versioning instructions
- - Dont use '12345' or 'admin' passwords 
- - Add csrf protection o internal requests
  - GIT: use dev brach for new features, hotfix to fast fixed. Master updates only merge dev or hotfixes. Periodically, update dev with hotfixes and hotfix with new devs
