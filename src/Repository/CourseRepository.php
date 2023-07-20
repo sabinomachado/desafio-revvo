@@ -79,7 +79,8 @@ class CourseRepository implements CourseRepositoryInterface
     public function remove(string $id): void
     {
         $query = "UPDATE " . self::TABLE . " SET 
-            deletado = '1'
+            deletado = '1',
+            deleted_at = NOW() 
             WHERE id = {$id}";
 
         $this->pdo->query($query);

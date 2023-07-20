@@ -9,5 +9,13 @@ CREATE TABLE courses (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     deleted_at TIMESTAMP NULL,
+    deletado BOOLEAN NULL DEFAULT 0,
     PRIMARY KEY (id)
 );
+
+
+CREATE TRIGGER `tr_set_deleted_at` BEFORE UPDATE ON `courses` FOR EACH ROW BEGIN
+  IF NEW.deletado = 1 THEN
+    SET NEW.deleted_at = NOW();
+  END IF;
+END
