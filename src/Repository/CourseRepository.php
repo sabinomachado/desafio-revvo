@@ -78,8 +78,12 @@ class CourseRepository implements CourseRepositoryInterface
 
     public function remove(string $id): void
     {
-        $query = 'DELETE FROM '.self::TABLE." WHERE id={$id};";
-
+        //$query = 'DELETE FROM '.self::TABLE." WHERE id={$id};";
+        $query = "UPDATE " . self::TABLE . " SET 
+            deletado = '1'
+            WHERE id = {$course->getId()}";
+        var_dump($query);
+        die();
         $this->pdo->query($query);
     }
 
@@ -121,5 +125,5 @@ class CourseRepository implements CourseRepositoryInterface
         }
       
     }
-    
+
     }

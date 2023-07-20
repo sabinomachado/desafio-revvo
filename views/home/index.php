@@ -14,7 +14,9 @@
                     <p><?php echo($course->summary) ?></p>
                 </div>
                 <?php 
+                echo "<a class='btn' href='/cursos/excluir?id={$course->id}'>Excluir</a>";
                 echo "<a class='courses__button flexHorizontalVertical' href='/cursos/edit?id={$course->id}'>ver curso</a>";
+            
                 ?>
                 </div>
 

@@ -105,4 +105,14 @@ class CourseController extends AbstractController
             //     'courses' => $this->repository->findAll(),
             //     ]);
     }
+    public function removeAction(): void
+    {
+        var_dump("chegou aqui!");
+        $this->repository->remove($_GET['id']);
+
+        $this->render('home/index', [
+            'courses' => $this->repository->findAll(),
+            ]);
+    }
+    
 }
