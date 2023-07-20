@@ -29,7 +29,7 @@
           </div>
         </div>
     </div>
-    <div class="slider__imgs flexVertical" style="background-image: url('https://www.ibe.edu.br/wp-content/uploads/2018/11/255772-8-tecnicas-para-se-destacar-em-uma-reuniao-de-negocios.jpg')">
+    <div class="slider__imgs flexVertical" style="background-image: url('https://e-dou.com.br/wp-content/uploads/2017/10/medidas-importantes-para-realizar-apos-uma-reuniao-1000x370.jpg')">
       <div class="container">
           <div class="slider__info--wrapper flexVertical">
             <div class="slider__info">
