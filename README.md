@@ -1,8 +1,8 @@
 ## Desafio Desenvolvedor FULLSTACK Pleno - REVVO
  - Link com a descrição dos itens necessários no desafio - [Bitbucket](https://bitbucket.org/leolearningbrasil/desafio-revvo/src/master/)
- - Desafio desenvolvido por [Sabino_Machado](https://www.linkedin.com/in/sabino-machado/)
+ - Desafio desenvolvido por [Sabino Machado](https://www.linkedin.com/in/sabino-machado/)
  - Variáveis PHP em camelCase.
- - Variáveis CSS em [BEM-like_Namikng](https://cssguidelin.es/#naming-conventions
+ - Variáveis CSS em [BEM-like_Naming](https://cssguidelin.es/#naming-conventions
 )
 - Variáveis JS em camelCase.
 - Utilizei a a biblioteca [PHP-DI] através do composer, para implementar a injeção de dependência e aplicar namespaces, aplicando a [PSR-4](https://www.php-fig.org/psr/psr-4/)
@@ -10,7 +10,7 @@
 
 ## Project SETUP
 - Install [Composer](https://getcomposer.org/download/)
-- Install [NPM](https://www.npmjs.com/get-npm) - _nvm is recommended_
+- Install [NPM](https://www.npmjs.com/get-npm)
 
 - Install XAMP/WAMP/LAMP or
 
