@@ -15,11 +15,11 @@
 - Install [Composer](https://getcomposer.org/download/)
 - Install [NPM](https://www.npmjs.com/get-npm)
 
-- Install XAMP/WAMP/LAMP or
-
-- Install mysql:5.7+
-- Install PHP 7+
-- Install Apache or Nginx
+- Install XAMP/WAMP/LAMP 
+    OR
+    - Install mysql:5.7+
+    - Install PHP 7+
+    - Install Apache or Nginx
 
 
 ## CREATING DATABASE
@@ -43,6 +43,6 @@ COLOCAR OS CÓDIGO DA sql
 - Run locally `localhost:8000`
 
 # Other Instructions
- - use english on all, except frontend for show to users
+ - Use english on all, except frontend for show to users
  - Use Ident to spaces = 2 for coding
  - GIT: use dev brach for new features, hotfix to fast fixed. Master updates only merge dev or hotfixes. Periodically, update dev with hotfixes and hotfix with new devs
