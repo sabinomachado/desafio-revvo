@@ -8,7 +8,7 @@
 - Utilizei a a biblioteca [PHP-DI] através do composer, para implementar a injeção de dependência e aplicar namespaces, aplicando a [PSR-4](https://www.php-fig.org/psr/psr-4/)
 
 ## About Project & Developer
- [Vídeo Explicativo](https://youtu.be/WXxSuzWteVQ)
+ [Vídeo Explicativo](https://www.youtube.com/watch?v=WXxSuzWteVQ)
 
 
 ## Project SETUP
