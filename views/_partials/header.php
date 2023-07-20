@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
         <link rel="stylesheet" href="/assets/css/revvo.css">
         <script src="/assets/js/revvo.js"> </script>
+        <script src="/assets/js/slider.js"> </script>
     </head>
     <body>
 

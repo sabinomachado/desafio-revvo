@@ -10,6 +10,93 @@ body {
   background-color: #efefef;
 }
 
+section.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.7);
+  z-index: 9999;
+}
+
+section.modal .modal__wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  padding: 0px 0 20px;
+  background: #fff;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+section.modal .modal__wrapper .modal__close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  transform: translate(30%, -30%);
+}
+
+section.modal .modal__wrapper .modal__close i {
+  font-size: 25px;
+  color: #01beaa;
+}
+
+section.modal .modal__wrapper .modal__img {
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 300px;
+  background-image: url("https://vetus.com.br/universidade/wp-content/uploads/2015/03/reuniao-02.jpg");
+  background-size: cover;
+  background-position: 100% 60%;
+  background-repeat: no-repeat;
+}
+
+section.modal .modal__wrapper h2 {
+  font-size: 25px;
+  text-transform: uppercase;
+  padding: 30px 0 0px;
+  text-align: center;
+}
+
+section.modal .modal__wrapper p {
+  max-width: 500px;
+  color: #919191;
+  text-align: center;
+  margin: 15px auto;
+}
+
+section.modal .modal__wrapper a {
+  width: 320px;
+  height: 50px;
+  background: #1da2da;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 30px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+  section.modal .modal__wrapper .modal__img {
+    height: 140px;
+  }
+
+  section.modal .modal__wrapper h2 {
+    font-size: 17px;
+  }
+
+  section.modal .modal__wrapper p {
+    font-size: 14px;
+  }
+}
+
 .container {
   width: 100%;
   max-width: 1280px;
@@ -383,6 +470,110 @@ section.courses .courses__card .courses__button {
 @media screen and (max-width: 1024px) {
   .courses__list.flex {
     justify-content: center;
+  }
+}
+
+section.slider {
+  width: 100%;
+  height: 330px;
+  position: relative;
+}
+
+section.slider .slider__imgs {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+section.slider .slider__arrowLeft {
+  z-index: 99;
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+  font-size: 47px;
+  color: #efe7e4;
+}
+
+section.slider .slider__arrowRight {
+  z-index: 99;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  font-size: 47px;
+  color: #efe7e4;
+}
+
+section.slider .slider__dots--wrapper {
+  z-index: 10;
+  background: #fff;
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+section.slider .slider__dots--wrapper .slider__dots {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #cdcbcc;
+}
+
+section.slider .slider__dots--wrapper .slider__dots.slider__dots--active {
+  background-color: #4c4040;
+}
+
+section.slider .slider__info--wrapper {
+  width: 100%;
+}
+
+section.slider .slider__info {
+  padding: 30px;
+  z-index: 10;
+  width: 390px;
+  height: 290px;
+  background: rgba(0,0,0,.8);
+}
+
+section.slider .slider__info h2 {
+  text-transform: uppercase;
+  color: #fff;
+  padding-bottom: 30px;
+}
+
+section.slider .slider__info p {
+  color: #fff;
+  padding-bottom: 30px;
+}
+
+section.slider .slider__info a {
+  width: 125px;
+  height: 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+@media screen and (max-width: 1024px) {
+  section.slider .slider__info {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section.slider .slider__info {
+    width: 330px;
   }
 }
 
