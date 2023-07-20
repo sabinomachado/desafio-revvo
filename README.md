@@ -1,4 +1,4 @@
-## Desafio Desenvolvedor FULLSTACK Pleno - REVVO
+## Challenger Desenvolvedor FULLSTACK Pleno - REVVO
  - Link com a descrição dos itens necessários no desafio - [Bitbucket](https://bitbucket.org/leolearningbrasil/desafio-revvo/src/master/)
  - Desafio desenvolvido por [Sabino Machado](https://www.linkedin.com/in/sabino-machado/)
  - Variáveis PHP em camelCase.

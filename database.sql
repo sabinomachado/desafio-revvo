@@ -12,10 +12,3 @@ CREATE TABLE courses (
     deletado BOOLEAN NULL DEFAULT 0,
     PRIMARY KEY (id)
 );
-
-
-CREATE TRIGGER `tr_set_deleted_at` BEFORE UPDATE ON `courses` FOR EACH ROW BEGIN
-  IF NEW.deletado = 1 THEN
-    SET NEW.deleted_at = NOW();
-  END IF;
-END
